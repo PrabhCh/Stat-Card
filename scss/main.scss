@@ -1,0 +1,135 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $bg-color;
+  // margin: auto;
+  // padding: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+
+  h1 {
+    font-family: "Inter", sans-serif;
+  }
+
+  p {
+    font-family: "Lexand Deca", sans-serif;
+    font-size: 13px;
+  }
+}
+
+#section {
+  display: flex;
+  justify-content: center;
+  background: $card-color;
+  border-radius: 10px;
+  width: 1000px;
+  height: 400px;
+  overflow: hidden;
+
+  .section_a {
+    // top | right | bottom | left
+    padding: 3rem 5rem 1.5rem 3rem;
+    width: 50%;
+    .part_a {
+      h1 {
+        color: $main-heading;
+        font-size: 30px;
+
+        span {
+          color: $soft-violet;
+        }
+      }
+
+      p {
+        color: $main-paragraph;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        line-height: 1.3rem;
+        font-weight: 100;
+      }
+    }
+
+    .part_b {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem;
+      text-align: left;
+      padding: 2rem 0;
+
+      h1 {
+        font-size: 20px;
+        color: $main-heading;
+      }
+
+      p {
+        padding-top: 0.4rem;
+        color: $stat-heading;
+        font-weight: 100;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .section_b {
+    position: relative;
+    width: 50%;
+
+    .purple {
+      z-index: 3;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: $soft-violet;
+      opacity: 0.6;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      // border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #section {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    height: 750px;
+    width: 300px;
+
+    .section_a {
+      // top | right | bottom | left
+      padding: 2rem 2rem;
+      width: 100%;
+      text-align: center;
+
+      .part_b {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        text-align: center;
+        padding: 1rem 0;
+      }
+    }
+
+    .section_b {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
